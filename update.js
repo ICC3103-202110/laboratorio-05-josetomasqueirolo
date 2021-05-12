@@ -8,3 +8,10 @@ const showTable = [
 
 //print
 printTable(showTable);
+
+
+function update(input, model){
+  const {billAmmount} = model
+  const {percentage} = model
+  const newBillAccount = 
+}
