@@ -1,17 +1,15 @@
-const { printTable } = require('console-table-printer');
-
-//Create a table
-const showTable = [
-  { index: 3, text: 'I would like some gelb bananen bitte', value: 100 },
-  { index: 4, text: 'I hope batch update is working', value: 300 },
-];
-
-//print
-printTable(showTable);
-
 
 function update(input, model){
   const {billAmmount} = model
   const {percentage} = model
-  const newBillAccount = 
+  const newBillAccount = input
+  return {
+    ...model,
+    billAmmount: newBillAccount,
+    input: input
+  }
+}
+
+module.exporte = {
+  update
 }

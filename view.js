@@ -14,7 +14,7 @@ function getTitle(){
     )
 }
 
-function geTable(model){
+function getTable(model){
     const {billAmmount} = model
     const {percentage} = model
     const {tip} = model
@@ -81,4 +81,5 @@ function view(model){
 module.exports = {
     view, 
     inputForm,
+    getTitle
 }
