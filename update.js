@@ -7,4 +7,4 @@ const showTable = [
 ];
 
 //print
-printTable(showtable);
+printTable(showTable);

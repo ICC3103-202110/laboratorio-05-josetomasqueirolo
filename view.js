@@ -1,18 +1,21 @@
-const figlet  = require("figlet")
-const chalk = require("chalk")
+const figlet = require('figlet')
+const chalk = require('chalk')
 
 function getTitle(){
     return chalk.green(
         figlet.textSync(
-            "Tip Calculetor App",
+            'Tip Calculator App',
             {
-                horizontalLayout: "full",
-                font: "Nancyj-Underlined"
+                horizontalLayout: 'full',
+                font: 'Nancyj-Underlined'
             }
         )
     )
 }
 
+function geTable(model){
+
+}
 module.exports = {
     getTitle
 }
