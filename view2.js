@@ -13,6 +13,10 @@ function getTitle(){
     )
 }
 
+function getTable(model){
+    
+}
+
 module.exports = {
     getTitle
 }
