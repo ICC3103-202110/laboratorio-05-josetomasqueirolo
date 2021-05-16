@@ -1,6 +1,7 @@
 const {printTable} = require("console-table-printer")
-const chalk = require("chalk");
-const { builtinModules } = require("node:module");
+const figlet = require('figlet')
+const chalk = require('chalk')
+
 
 function getTable(billAmount, percentage){
     const table = [
@@ -10,7 +11,19 @@ function getTable(billAmount, percentage){
   printTable(table);
 }
 
+function getTitle(){
+    return chalk.green(
+        figlet.textSync(
+            'Bill Calculator App',
+            {
+                horizontalLayout: 'full',
+                font: 'Nancyj-Underlined'
+            }
+        )
+    )
+}
 
 module.exports = {
-    getTable
+    getTable,
+    getTitle
 }
