@@ -14,11 +14,15 @@ function getTitle(){
     )
 }
 
-function getTable(model){
-    const {billAmmount} = model
-    const {percentage} = model
-    const {tip} = model
-    const {total} = model
+function getTable(model2){
+    const {counter} = model2
+    const {input} = model2
+    /*
+    const {billAmmount} = model2
+    const {percentage} = model2
+    const {tip} = model2
+    const {total} = model2
+    */
     return [
         {
             "Bill Ammount": billAmmount
@@ -26,7 +30,7 @@ function getTable(model){
     ]
 }
 
-function valueInput(model){
+function inputForm(model){
     const {input} = model
     const message = "Bill ammount?"
     return inquirer.prompt([
@@ -46,6 +50,16 @@ function valueInput(model){
     ])
 }
 
+// Get actual console view
+function view(model){
+    return {
+        title: getTitle(),
+        table: getTable(model)
+    }
+}
+
 module.exports = {
-    getTitle
+    view,
+    getTitle,
+    inputForm
 }
