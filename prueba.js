@@ -1,4 +1,4 @@
-const { app } = require("./app")
-const {getTitle} = require("./view")
+const {getTable} = require("./view")
 
-app()
+
+getTable(1000,10)

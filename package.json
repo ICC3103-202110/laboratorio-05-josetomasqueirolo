@@ -1,0 +1,27 @@
+{
+  "name": "lab5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "console-table-printer": "^2.9.0",
+    "figlet": "^1.5.0",
+    "inquirer": "^8.0.0",
+    "prompt-sync-history": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ICC3103-202110/laboratorio-05-josetomasqueirolo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ICC3103-202110/laboratorio-05-josetomasqueirolo/issues"
+  },
+  "homepage": "https://github.com/ICC3103-202110/laboratorio-05-josetomasqueirolo#readme"
+}
