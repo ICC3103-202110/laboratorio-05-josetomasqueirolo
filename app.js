@@ -1,18 +1,22 @@
-const {inputForm, getTitle} = require('./view')
+const {inputForm, getTitle, getTable} = require('./view')
 
-async function app(){
-    while (true){
-        const {model, currentView} = state
-        const {title, table} = currentView
-        // I/O
-        console.clear()
-        console.log(getTitle())
-        // FORM (Ask user input)
-        const {input} = await inputForm()
-        const updatedModel = update(input, model)
-        printTable(table)
+async function app(billAmount, percentage, tip, total){
+    
+    // I/O
+    console.clear()
+    console.log(getTitle())
+    getTable(billAmount, percentage, tip, total)
+    // FORM (Ask user input)
+    const {billAmount2, percentage2} = await inputForm()
+    //update(billAmount2, percentage2)
+    
+    console.log(billAmount2, percentage2)
+    //update
+    
         
-    }
+        
+
 }
 
-app()
+app(0,0,0,0)
+

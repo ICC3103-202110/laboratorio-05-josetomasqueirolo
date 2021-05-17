@@ -56,8 +56,6 @@ function inputForm(){
     ])
 }
 
-
-//getTable(1000, 10, 100, 1100)
 module.exports = {
     getTable,
     getTitle,
