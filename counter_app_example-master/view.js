@@ -5,7 +5,7 @@ const inquirer = require('inquirer')
 function getTitle(){
     return chalk.green(
         figlet.textSync(
-            'Counter App',
+            'Tip Calculator App',
             {
                 horizontalLayout: 'full',
                 font: 'Nancyj-Underlined'
@@ -47,7 +47,7 @@ function inputForm(model){
             type: 'input',
             message: message2,
             validate: function(value){
-                if(value>0 || value<=100){
+                if(100>=value>0){
                     return true
                 } else {
                     return 'Enter a valid number'
