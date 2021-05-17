@@ -7,7 +7,7 @@ function calc_total(billAmount, tip){
     return billAmount+tip
 }
 
-function update(input, model){
+function update(input1, input2, model){
     const {billAmount} = model
     const {percentage} = model
     const {tip} = model
