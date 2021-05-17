@@ -1,23 +1,27 @@
-const FUNCTIONS = {
-    '+': increase,
-    '-': decrease
+
+function tip_per(billAmount, percentage){
+    return billAmount*percentage/100
 }
 
-function increase(counter){
-    return counter + 1
-}
-
-function decrease(counter){
-    return counter - 1
+function calc_total(billAmount, tip){
+    return billAmount+tip
 }
 
 function update(input, model){
-    const {counter} = model
-    const newCounter = FUNCTIONS[input](counter)
+    const {billAmount} = model
+    const {percentage} = model
+    const {tip} = model
+    const {total} = model
+    const newBillAmount= FUNCTIONS[input1](billAmount)
+    const newPercentage= FUNCTIONS[input2](percentage)
+    const newTip= tip_per(newBillAmount, newPercentage)
+    const newTotal= calc_total(newBillAmount, newTip)
     return {
         ...model,
-        counter: newCounter,
-        input: input
+        billAmount: newBillAmount,
+        percentage: newPercentage,
+        tip: newTip,
+        total:newTotal
     }
 }
 

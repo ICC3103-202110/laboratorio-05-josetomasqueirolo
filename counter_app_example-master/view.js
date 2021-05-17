@@ -26,35 +26,35 @@ function getTable(model){
 
 function inputForm(model){
     const {input} = model
-    const message = 'Increase or decrease?'
+    const message1 = 'Bill amount?'
+    const message2 = "Tip percentage?"
     return inquirer.prompt([
         {
-            name: 'input',
+            name: 'input1',
             type: 'input',
-            message: message,
+            message: message1,
             default: input,
             validate: function(value){
-                if(value === '+' || value === '-'){
+                if(value>0){
                     return true
                 } else {
-                    return 'Enter + or -'
+                    return 'Enter a valid ammount'
+                }
+            }
+        },
+        {
+            name: 'input2',
+            type: 'input',
+            message: message2,
+            validate: function(value){
+                if(value>0 || value<=100){
+                    return true
+                } else {
+                    return 'Enter a valid number'
                 }
             }
         }
     ])
-}
-
-function listForm(model){
-    const {input} = model
-    const message = 'Increase or decrease?'
-    const choices = ['+', '-']
-    return inquirer.prompt({
-        name: 'input',
-        type: 'list',
-        message: message,
-        default: input,
-        choices: choices
-    })
 }
 
 // Get actual console view
@@ -65,8 +65,8 @@ function view(model){
     }
 }
 
+
 module.exports = {
     view, 
-    inputForm,
-    listForm
+    inputForm
 }
