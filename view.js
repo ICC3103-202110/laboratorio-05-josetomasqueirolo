@@ -1,21 +1,11 @@
-const {printTable} = require("console-table-printer")
 const figlet = require('figlet')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
 
-
-function getTable(billAmount, percentage, tip, total){
-    const table = [
-    { "Bill Amount": billAmount, "Tip (%)": percentage, "Tip": tip, "Total": total}
-  ];
-  
-  printTable(table);
-}
-
 function getTitle(){
     return chalk.green(
         figlet.textSync(
-            'Bill Calculator App',
+            'Tip Calculator App',
             {
                 horizontalLayout: 'full',
                 font: 'Nancyj-Underlined'
@@ -24,29 +14,40 @@ function getTitle(){
     )
 }
 
+function getTable(model){
+    const {billAmount} = model
+    const {percentage} = model
+    const {tip} = model
+    const {total} = model
+    return [
+        {"Bill Amount": billAmount, "Tip (%)": percentage, "Tip": tip, "Total": total},
+    ]
+}
 
-function inputForm(){
+function inputForm(model){
+    const {input} = model
     const message1 = 'Bill amount?'
     const message2 = "Tip percentage?"
     return inquirer.prompt([
         {
-            name: 'billAmmount',
+            name: 'input1',
             type: 'input',
             message: message1,
+            default: input,
             validate: function(value){
                 if(value>0){
                     return true
                 } else {
-                    return 'Enter a valid number'
+                    return 'Enter a valid ammount'
                 }
             }
         },
         {
-            name: 'percentage',
+            name: 'input2',
             type: 'input',
             message: message2,
             validate: function(value){
-                if(value>0 || value<=100){
+                if(100>=value>=0){
                     return true
                 } else {
                     return 'Enter a valid number'
@@ -56,10 +57,16 @@ function inputForm(){
     ])
 }
 
-module.exports = {
-    getTable,
-    getTitle,
-    inputForm
+// Get actual console view
+function view(model){
+    return {
+        title: getTitle(),
+        table: getTable(model)
+    }
 }
 
 
+module.exports = {
+    view, 
+    inputForm
+}
